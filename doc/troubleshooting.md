@@ -1,4 +1,13 @@
-# Trouble Shooting
+# TroubleShooting
+
+## Huge Precision Loss
+
+Try tweaking the config:
+
+```python
+torch.backends.cuda.matmul.allow_fp16_reduced_precision_reduction = False
+torch.backends.cuda.matmul.allow_tf32 = False
+```
 
 ## Compilation Is SO SLOW. How To Improve It?
 
@@ -7,6 +16,7 @@ You could disable features related to it to speed up compilation.
 But this might slow down your inference.
 
 Disable JIT optimized execution (fusion).
+__This can significantly speed up compilation.__
 
 ```python
 # Wrap your code in this context manager
@@ -20,7 +30,7 @@ Or disable it globally.
 torch.jit.set_fusion_strategy([('STATIC', 0), ('DYNAMIC', 0)])
 ```
 
-Disable Triton.
+Disable Triton (not suggested).
 
 ```python
 config.enable_triton = False

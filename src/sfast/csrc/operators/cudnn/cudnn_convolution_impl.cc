@@ -58,8 +58,8 @@ struct ConvolutionDescriptor
   void set(cudnnDataType_t dataType, int dim, int *pad, int *stride,
            int *upscale /* aka dilation */, int groups, bool allow_tf32) {
     cudnnDataType_t mathType = dataType;
-    if (dataType == CUDNN_DATA_HALF) {
-      mathType = CUDNN_DATA_HALF;
+    if (dataType == CUDNN_DATA_HALF && dim >= 3) {
+      mathType = CUDNN_DATA_FLOAT;
     } else if (dataType == CUDNN_DATA_BFLOAT16) {
       mathType = CUDNN_DATA_FLOAT;
     }
@@ -1300,7 +1300,6 @@ public:
         input, weight, z, alpha, bias, stride, padding, dilation, transposed,
         output_padding, groups, activation_mode);
 
-    auto z_ = z.has_value() ? bias.value() : Tensor();
     auto bias_ = bias.has_value() ? bias.value() : Tensor();
 
     ctx->save_for_backward({input, weight, bias_, output});

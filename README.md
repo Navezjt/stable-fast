@@ -6,17 +6,20 @@
 
 [Discord Channel](https://discord.gg/kQFvfzM4SJ)
 
-`stable-fast` achieves SOTA inference performance on __ALL__ kinds of diffuser models.
+`stable-fast` achieves SOTA inference performance on __ALL__ kinds of diffuser models, even with the latest `StableVideoDiffusionPipeline`.
 And unlike `TensorRT` or `AITemplate`, which takes dozens of minutes to compile a model, `stable-fast` only takes a few seconds to compile a model.
 `stable-fast` also supports `dynamic shape`, `LoRA` and `ControlNet` out of the box.
 
-[![](https://mermaid.ink/img/pako:eNpFUk2PmzAQ_SsjS1EuQGxYEuBQqdL20EMvuzlUXe9hgAEsgY2w2U2E-O81odoePJp5Hs1787GwytTECnY4LEorV8BydB0NdCzg2JiJrDuusB4OUt_uVYeTC0tyKLVTrieQ7KoGAp8ILWma0CndgtEEasCW4FO5Dl6fQURpAKmIb_55h4N1NNrAZ8LL9Tc88YxL5ilCvCkLb5J9oFZ9j-DMVHWSBZ7p4UaVGUbV0w59_3mlYezR_Ys9cdObzz24krZmerlCHvFI7Jh1WPYUNmidZO9S33dCyQbPpixVRtdWMuAQht8g5pxLLXWJE7yJLL8EIFLBvRVp5i3nSQB5LjaTvrOADTQNqGo_zkVq2DRvo5Ss8G6JlrYeV5-HszOvd12xwk0zBWwea9_Ds8J2woEVDfb2C_1RK9_5F9gbrMmHC3P3cVtcq6zzJb3yRrUbPk-9hzvnRlucTtt31Po1zOU2u5NV9bbF7iM_n87xOcM4ofMlwTRJ6qoUedbET6KpL1zEyNY1YCPqP8b8V0UPPb_2q3kcz_oX1ja5bQ?type=png)](https://mermaid.live/edit#pako:eNpFUk2PmzAQ_SsjS1EuQGxYEuBQqdL20EMvuzlUXe9hgAEsgY2w2U2E-O81odoePJp5Hs1787GwytTECnY4LEorV8BydB0NdCzg2JiJrDuusB4OUt_uVYeTC0tyKLVTrieQ7KoGAp8ILWma0CndgtEEasCW4FO5Dl6fQURpAKmIb_55h4N1NNrAZ8LL9Tc88YxL5ilCvCkLb5J9oFZ9j-DMVHWSBZ7p4UaVGUbV0w59_3mlYezR_Ys9cdObzz24krZmerlCHvFI7Jh1WPYUNmidZO9S33dCyQbPpixVRtdWMuAQht8g5pxLLXWJE7yJLL8EIFLBvRVp5i3nSQB5LjaTvrOADTQNqGo_zkVq2DRvo5Ss8G6JlrYeV5-HszOvd12xwk0zBWwea9_Ds8J2woEVDfb2C_1RK9_5F9gbrMmHC3P3cVtcq6zzJb3yRrUbPk-9hzvnRlucTtt31Po1zOU2u5NV9bbF7iM_n87xOcM4ofMlwTRJ6qoUedbET6KpL1zEyNY1YCPqP8b8V0UPPb_2q3kcz_oX1ja5bQ)
+[![](https://mermaid.ink/img/pako:eNpVUsFu2zAM_RVCQJCLnchOncQ-DBjWHXbYpc1hWNUDbdO2AFsyLKVNFvjfR8VFhwkwQT5LfOQjb6KyNYlCxHGsTGVNo9tCGeBzuX7rcPIfUTjvuvZdAUcp_2Ed6bbzBaQZg_ckq9VNG83Qbe07GmhdwLqxEzm_nmFerZS5XKuQOS7JI3R20n-s8dgr47XvCZQ46YGA30BLhib02rRgDYEesCUuw3fw_AjJJosgS9ILf-xIcJ5GF_FNeDr9ggd5lEowW4wX7eBFiTc0uu8RvJ2qTomIme7uprLDqHtaoK8_TjSMPfqPmImb3r4vwYmMs9PTCfKN3CQL5jyWPcUNOq_EqzLXhVCJgdm0I1a1dkqAhDj-AqkM8ilT4gQvyTE_RJBkiWSbZEe2Uu4iyPMkmOxVRGKgaUBd84xuQXauOaiqRMFuiY5CjzPfw7O3z1dTicJPZ4rEeay5h0eN7YTD_-D3WnPjomiwdwz2Fmvi8Cb8dQzL0GrnOeOyDgE_Tz3DnfejK7bb8HvT8hTOZZBu63Qd5tm95fvtPt0fMd3R_rDDbLerqzLJj036kDT1QSYpinmOxIjmt7XDZwF0r-fnson3hZz_AskE0h8?type=png)](https://mermaid.live/edit#pako:eNpVUsFu2zAM_RVCQJCLnchOncQ-DBjWHXbYpc1hWNUDbdO2AFsyLKVNFvjfR8VFhwkwQT5LfOQjb6KyNYlCxHGsTGVNo9tCGeBzuX7rcPIfUTjvuvZdAUcp_2Ed6bbzBaQZg_ckq9VNG83Qbe07GmhdwLqxEzm_nmFerZS5XKuQOS7JI3R20n-s8dgr47XvCZQ46YGA30BLhib02rRgDYEesCUuw3fw_AjJJosgS9ILf-xIcJ5GF_FNeDr9ggd5lEowW4wX7eBFiTc0uu8RvJ2qTomIme7uprLDqHtaoK8_TjSMPfqPmImb3r4vwYmMs9PTCfKN3CQL5jyWPcUNOq_EqzLXhVCJgdm0I1a1dkqAhDj-AqkM8ilT4gQvyTE_RJBkiWSbZEe2Uu4iyPMkmOxVRGKgaUBd84xuQXauOaiqRMFuiY5CjzPfw7O3z1dTicJPZ4rEeay5h0eN7YTD_-D3WnPjomiwdwz2Fmvi8Cb8dQzL0GrnOeOyDgE_Tz3DnfejK7bb8HvT8hTOZZBu63Qd5tm95fvtPt0fMd3R_rDDbLerqzLJj036kDT1QSYpinmOxIjmt7XDZwF0r-fnson3hZz_AskE0h8)
 
-| Framework | torch | torch.compile | AIT  | oneflow | TensorRT | __stable-fast__ |
-| --------- | ----- | ------------- | ---- | ------- | -------- | --------------- |
-| Time/ms   | 1897  | 1510          | 1158 | 1003    | 991      | __995__         |
+[![](https://mermaid.ink/img/pako:eNpFUk1v2zAM_SuEgCAXu3HsfLg-7LL22MsaDMWqHmiLtgXYUmAxWTLD_310UrQ8SY8S3-MjR1V5Q6pQcRxrV3lX26bQDiQu158tDvx5m-OvNdwWkCfJN9aSbVouIE0FvBVZLEbrrEDjklvqaVnAsvYDBV5OMC0W2l2u1Vw5LokRWj_Yf94xdtqx5Y5Aq4PtCeQPNORoQLauAe8IztaQFxncwuvvp_jtEME6STeX7X4XQbqFesCeQiRv4dfhDTZJnmglfDFebIB3rc7obNchsB-qVqtIuG7Hh8r3R9vRHQqMZUdxjYG1-tDuev8vCRKHTNAKEojjH0IuTWtX4gDveRbBPolgk3-oSPU09GiNGDvOXgnNbIVWhRxLDDTLmuQdnti_Xl2lCh5OFKnT0SDTk8VGWlFFjV34Qp-NFbFfYOfRkFxHxdfjPMLGBpaS9yHO-GnoBG6Zj6FYreb0QyPencq53VWwZp5Ce37crXbpLsc0o90-w22WmapcP-Z1ulnXZp-sU1TTFKkjuj_ef6uim56X-_7c1mj6D1vdvkY?type=png)](https://mermaid.live/edit#pako:eNpFUk1v2zAM_SuEgCAXu3HsfLg-7LL22MsaDMWqHmiLtgXYUmAxWTLD_310UrQ8SY8S3-MjR1V5Q6pQcRxrV3lX26bQDiQu158tDvx5m-OvNdwWkCfJN9aSbVouIE0FvBVZLEbrrEDjklvqaVnAsvYDBV5OMC0W2l2u1Vw5LokRWj_Yf94xdtqx5Y5Aq4PtCeQPNORoQLauAe8IztaQFxncwuvvp_jtEME6STeX7X4XQbqFesCeQiRv4dfhDTZJnmglfDFebIB3rc7obNchsB-qVqtIuG7Hh8r3R9vRHQqMZUdxjYG1-tDuev8vCRKHTNAKEojjH0IuTWtX4gDveRbBPolgk3-oSPU09GiNGDvOXgnNbIVWhRxLDDTLmuQdnti_Xl2lCh5OFKnT0SDTk8VGWlFFjV34Qp-NFbFfYOfRkFxHxdfjPMLGBpaS9yHO-GnoBG6Zj6FYreb0QyPencq53VWwZp5Ce37crXbpLsc0o90-w22WmapcP-Z1ulnXZp-sU1TTFKkjuj_ef6uim56X-_7c1mj6D1vdvkY)
 
-__NOTE__: During benchmarking, `TensorRT` is tested with `static batch size` and `CUDA Graph enabled` while `stable-fast` is running with full dynamic shape.
+| Model       | torch | torch.compile | AIT  | oneflow | TensorRT | __stable-fast__ |
+| ----------- | ----- | ------------- | ---- | ------- | -------- | --------------- |
+| SD 1.5 (ms) | 1897  | 1510          | 1158 | 1003    | 991      | __995__         |
+| SVD-XT (s)  | 83    | 70            |      |         |          | __47__          |
+
+__NOTE__: During benchmarking, `TensorRT` is tested with `static batch size` and `CUDA Graph enabled` while `stable-fast` is running with dynamic shape.
 
 - [🚀Stable Fast](#stable-fast)
   - [Introduction](#introduction)
@@ -28,6 +31,7 @@ __NOTE__: During benchmarking, `TensorRT` is tested with `static batch size` and
   - [Usage](#usage)
     - [Optimize StableDiffusionPipeline](#optimize-stablediffusionpipeline)
     - [Optimize LCM Pipeline](#optimize-lcm-pipeline)
+    - [Optimize StableVideoDiffusionPipeline](#optimize-stablevideodiffusionpipeline)
     - [Dynamically Switch LoRA](#dynamically-switch-lora)
     - [Model Quantization](#model-quantization)
     - [Some Common Methods To Speed Up PyTorch](#some-common-methods-to-speed-up-pytorch)
@@ -40,8 +44,6 @@ __NOTE__: During benchmarking, `TensorRT` is tested with `static batch size` and
 
 ## Introduction
 
-__NOTE__: `stable-fast` is currently only in beta stage and is prone to be buggy, feel free to try it out and give suggestions!
-
 ### What is this?
 
 `stable-fast` is an ultra lightweight inference optimization framework for __HuggingFace Diffusers__ on __NVIDIA GPUs__.
@@ -50,8 +52,8 @@ __NOTE__: `stable-fast` is currently only in beta stage and is prone to be buggy
 - __CUDNN Convolution Fusion__: `stable-fast` implements a series of fully-functional and fully-compatible CUDNN convolution fusion operators for all kinds of combinations of `Conv + Bias + Add + Act` computation patterns.
 - __Low Precision & Fused GEMM__: `stable-fast` implements a series of fused GEMM operators that compute with `fp16` precision, which is fast than PyTorch's defaults (read & write with `fp16` while compute with `fp32`).
 - __Fused Linear GEGLU__: `stable-fast` is able to fuse `GEGLU(x, W, V, b, c) = GELU(xW + b) ⊗ (xV + c)` into one CUDA kernel.
-- __NHWC & Fused GroupNorm__: `stable-fast` implements a highly optimized fused NHWC `GroupNorm + GELU` operator with OpenAI's `Triton`, which eliminates the need of memory format permutation operators.
-- __Fully Traced Model__: `stable-fast` improves the `torch.jit.trace` interface to make it more proper for tracing complex models. Nearly every part of `StableDiffusionPipeline` can be traced and converted to __TorchScript__. It is more stable than `torch.compile` and has a significantly lower CPU overhead than `torch.compile` and supports __ControlNet__ and __LoRA__.
+- __NHWC & Fused GroupNorm__: `stable-fast` implements a highly optimized fused NHWC `GroupNorm + Silu` operator with OpenAI's `Triton`, which eliminates the need of memory format permutation operators.
+- __Fully Traced Model__: `stable-fast` improves the `torch.jit.trace` interface to make it more proper for tracing complex models. Nearly every part of `StableDiffusionPipeline/StableVideoDiffusionPipeline` can be traced and converted to __TorchScript__. It is more stable than `torch.compile` and has a significantly lower CPU overhead than `torch.compile` and supports __ControlNet__ and __LoRA__.
 - __CUDA Graph__: `stable-fast` can capture the `UNet`, `VAE` and `TextEncoder` into CUDA Graph format, which can reduce the CPU overhead when the batch size is small. This implemention also supports dynamic shape.
 - __Fused Multihead Attention__: `stable-fast` just uses xformers and makes it compatible with __TorchScript__.
 
@@ -64,14 +66,14 @@ But I still need to do some work to make it more stable and easy to use and prov
 
 - __Fast__: `stable-fast` is specialy optimized for __HuggingFace Diffusers__. It achieves a high performance across many libraries. And it provides a very fast compilation speed within only a few seconds. It is significantly faster than `torch.compile`, `TensorRT` and `AITemplate` in compilation time.
 - __Minimal__: `stable-fast` works as a plugin framework for `PyTorch`. It utilizes existing `PyTorch` functionality and infrastructures and is compatible with other acceleration techniques, as well as popular fine-tuning techniques and deployment solutions.
-- __Maximum Compatibility__: `stable-fast` is compatible with all kinds of `HuggingFace Diffusers` and `PyTorch` versions. It is also compatible with `ControlNet` and `LoRA`.
+- __Maximum Compatibility__: `stable-fast` is compatible with all kinds of `HuggingFace Diffusers` and `PyTorch` versions. It is also compatible with `ControlNet` and `LoRA`. And it even supports the latest `StableVideoDiffusionPipeline` out of the box!
 
 ## Installation
 
 __NOTE__: `stable-fast` is currently only tested on `Linux` and `WSL2 in Windows`.
 You need to install PyTorch with CUDA support at first (versions from 1.12 to 2.1 are suggested).
 
-I only test `stable-fast` with `torch==2.1.0`, `xformers==0.0.22` and `triton==2.1.0` on `CUDA 12.1` and `Python 3.10`.
+I only test `stable-fast` with `torch>=2.1.0`, `xformers>=0.0.22` and `triton>=2.1.0` on `CUDA 12.1` and `Python 3.10`.
 Other versions might build and run successfully but that's not guaranteed.
 
 ### Install Prebuilt Wheels
@@ -83,7 +85,9 @@ Currently both __Linux__ and __Windows__ wheels are available.
 ```bash
 # Change cu121 to your CUDA version and <wheel file> to the path of the wheel file.
 # And make sure the wheel file is compatible with your PyTorch version.
-pip3 install --index-url https://download.pytorch.org/whl/cu121 'diffusers>=0.19.3' 'xformers>=0.0.20' 'torch>=1.12.0' '<wheel file>'
+pip3 install --index-url https://download.pytorch.org/whl/cu121 \
+    'torch>=2.1.0' 'xformers>=0.0.22' 'triton>=2.1.0' 'diffusers>=0.19.3' \
+    '<wheel file>'
 ```
 
 ### Install From Source
@@ -96,7 +100,7 @@ pip3 install --index-url https://download.pytorch.org/whl/cu121 'diffusers>=0.19
 # Install PyTorch with CUDA and other packages at first.
 # Windows user: Triton might be not available, you could skip it.
 # NOTE: 'wheel' is required or you will meet `No module named 'torch'` error when building.
-pip3 install wheel 'torch>=1.12.0' 'diffusers>=0.19.3' 'xformers>=0.0.20' 'triton>=2.1.0'
+pip3 install wheel 'torch>=2.1.0' 'xformers>=0.0.22' 'triton>=2.1.0' 'diffusers>=0.19.3'
 
 # (Optional) Makes the build much faster.
 pip3 install ninja
@@ -124,9 +128,8 @@ import time
 import torch
 from diffusers import (StableDiffusionPipeline,
                        EulerAncestralDiscreteScheduler)
-from sfast.compilers.stable_diffusion_pipeline_compiler import (
-    compile, CompilationConfig)
-
+from sfast.compilers.diffusion_pipeline_compiler import (compile,
+                                                         CompilationConfig)
 
 def load_model():
     model = StableDiffusionPipeline.from_pretrained(
@@ -138,7 +141,6 @@ def load_model():
     model.safety_checker = None
     model.to(torch.device('cuda'))
     return model
-
 
 model = load_model()
 
@@ -155,6 +157,8 @@ try:
 except ImportError:
     print('Triton not installed, skip')
 # CUDA Graph is suggested for small batch sizes and small resolutions to reduce CPU overhead.
+# But it can increase the amount of GPU memory used.
+# For StableVideoDiffusionPipeline it is not needed.
 config.enable_cuda_graph = True
 
 model = compile(model, config)
@@ -197,6 +201,12 @@ You can check this Colab to see how it works on T4 GPU: [![Open In Colab](https:
 Refer to [examples/optimize_lcm_pipeline.py](examples/optimize_lcm_lora.py) for more details about how to optimize normal SD model with LCM LoRA.
 Refer to [examples/optimize_lcm_pipeline.py](examples/optimize_lcm_pipeline.py) for more details about how to optimize the standalone LCM model.
 
+### Optimize StableVideoDiffusionPipeline
+
+`stable-fast` is able to optimize the newest `StableVideoDiffusionPipeline` and achieve a `2x` speedup
+
+Refer to [examples/optimize_stable_video_diffusion_pipeline.py](examples/optimize_stable_video_diffusion_pipeline.py) for more details
+
 ### Dynamically Switch LoRA
 
 Switching LoRA dynamically is supported but you need to do some extra work.
@@ -206,6 +216,9 @@ is to update the original UNet model's parameters inplace.
 
 The following code assumes you have already load a LoRA and compiled the model,
 and you want to switch to another LoRA.
+
+If you don't enable CUDA graph and keep `preserve_parameters = True`, things could be much easier.
+The following code might not even be needed.
 
 ```python
 # load_state_dict with assign=True requires torch >= 2.1.0
@@ -235,14 +248,27 @@ switch_lora(compiled_model.unet, lora_b_path)
 
 ### Model Quantization
 
-`stable-fast` extends PyTorch's `quantize_dynamic` functionality and provides a fast quantized linear operator.
+`stable-fast` extends PyTorch's `quantize_dynamic` functionality and provides a dynamically quantized linear operator on CUDA backend.
 By enabling it, you could get a slight VRAM reduction for `diffusers` and significant VRAM reduction for `transformers`,
-and cound get a potential speedup.
+and cound get a potential speedup (not always).
 
-However, since `diffusers` implements its own `Linear` layer as `LoRACompatibleLinear`,
-you need to do some hacks to make it work and it is a little complex and tricky.
+For `SD XL`, it is expected to see VRAM reduction of `2GB` with an image size of `1024x1024`.
 
-Refer to [tests/compilers/test_stable_diffusion_pipeline_compiler.py](tests/compilers/test_stable_diffusion_pipeline_compiler.py) to see how to do it.
+```python
+def quantize_unet(m):
+    from diffusers.utils import USE_PEFT_BACKEND
+    assert USE_PEFT_BACKEND
+    m = torch.quantization.quantize_dynamic(m, {torch.nn.Linear},
+                                            dtype=torch.qint8,
+                                            inplace=True)
+    return m
+
+model.unet = quantize_unet(model.unet)
+if hasattr(model, 'controlnet'):
+    model.controlnet = quantize_unet(model.controlnet)
+```
+
+Refer to [examples/optimize_stable_diffusion_pipeline.py](examples/optimize_stable_diffusion_pipeline.py) for more details.
 
 ### Some Common Methods To Speed Up PyTorch
 
@@ -317,6 +343,7 @@ Thanks for __@SuperSecureHuman__ and __@jon-chuang__'s help, benchmarking on A10
 | With LoRA                           | Yes       |
 | Latent Consistency Model            | Yes       |
 | SDXL Turbo                          | Yes       |
+| Stable Video Diffusion              | Yes       |
 
 | Functionality                       | Supported |
 | ----------------------------------- | --------- |
